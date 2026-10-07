@@ -1,0 +1,21 @@
+{
+  "name": "dr-maincy-jain-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build",
+    "deploy": "npm run build && npx vercel --prod"
+  },
+  "dependencies": {
+    "@icon/icofont": "^1.0.1-alpha.1",
+    "bootstrap": "^4.6.0",
+    "lottie-react": "^3.1.2",
+    "next": "^14.2.33",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
