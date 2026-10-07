@@ -7,7 +7,7 @@ import { doctor } from "@/lib/doctor";
 const NAV_LINKS = [
   { href: "#heroBanner", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#services", label: "Treatments" },
+  { href: "/treatments/", label: "Treatments" },
   { href: "#gallery", label: "Gallery" },
   { href: "#reviews", label: "Reviews" },
   { href: "#clinic", label: "Contact" },

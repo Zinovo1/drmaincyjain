@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { doctor } from "@/lib/doctor";
+import { TREATMENT_PAGES } from "@/lib/seoTreatments";
 
 const Footer = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -22,15 +24,23 @@ const Footer = () => {
               {doctor.title} with {doctor.experienceYears}+ years of experience, dedicated to
               compassionate women&apos;s healthcare in Gurugram.
             </p>
+            <p className="footer-text small mb-0">
+              <Link href="/">Homepage</Link>
+              {" · "}
+              <Link href="/treatments/">All treatments</Link>
+            </p>
           </div>
           <div className="col-lg-4 mb-4 mb-lg-0">
-            <h5 className="footer-heading">Treatments</h5>
+            <h5 className="footer-heading">Treatments in Gurugram</h5>
             <ul className="footer-links list-unstyled">
-              {(doctor.marqueeServices || []).slice(0, 6).map((item) => (
-                <li key={item}>
-                  <a href="#services">{item}</a>
+              {TREATMENT_PAGES.slice(0, 8).map((item) => (
+                <li key={item.slug}>
+                  <Link href={item.path}>{item.title}</Link>
                 </li>
               ))}
+              <li>
+                <Link href="/treatments/">More services</Link>
+              </li>
             </ul>
           </div>
           <div className="col-lg-4">
@@ -61,8 +71,8 @@ const Footer = () => {
         <button
           type="button"
           className="tr-back-top"
-          aria-label="Back to top"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
         >
           <i className="icofont icofont-arrow-up" />
         </button>

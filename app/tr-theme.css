@@ -1360,6 +1360,149 @@
 
 }
 
+/* SEO — local summary & treatment pages */
+.tr-seo-local {
+  background: #fff;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.tr-seo-local-title {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  margin-bottom: 1rem;
+  color: #6b21a8;
+}
+
+.tr-seo-local-text {
+  max-width: 820px;
+  margin: 0 auto 1rem;
+  line-height: 1.75;
+  color: #5c5560;
+  text-align: center;
+}
+
+.tr-seo-local-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.tr-seo-local-links a {
+  color: #c084fc;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.tr-seo-local-links a:hover {
+  color: #a855f7;
+  text-decoration: underline;
+}
+
+.tr-treatments-index,
+.tr-treatment-page {
+  background: #fff5fb;
+}
+
+.tr-treatment-index-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.tr-treatment-index-link {
+  display: block;
+  padding: 1rem 1.15rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #f5d0fe;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tr-treatment-index-link:hover {
+  border-color: #c084fc;
+  box-shadow: 0 8px 24px rgba(192, 132, 252, 0.12);
+  text-decoration: none;
+}
+
+.tr-treatment-index-link strong {
+  display: block;
+  color: #6b21a8;
+  margin-bottom: 0.25rem;
+}
+
+.tr-treatment-index-link span {
+  font-size: 0.9rem;
+  color: #6b6570;
+}
+
+.tr-treatment-breadcrumb {
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  color: #7a7280;
+}
+
+.tr-treatment-breadcrumb a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+.tr-treatment-intro {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #5c5560;
+}
+
+.tr-treatment-bullets {
+  margin: 1.25rem 0;
+  padding-left: 1.25rem;
+  color: #5c5560;
+  line-height: 1.7;
+}
+
+.tr-treatment-meta {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #6b6570;
+}
+
+.tr-treatment-aside {
+  background: #fff;
+  border: 1px solid #f5d0fe;
+  border-radius: 16px;
+  padding: 1.25rem;
+  position: sticky;
+  top: 100px;
+}
+
+.tr-treatment-aside h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.tr-treatment-aside p {
+  font-size: 0.9rem;
+  color: #6b6570;
+}
+
+.tr-footer .footer-links a {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.tr-footer .footer-links a:hover {
+  color: #fff;
+}
+
 /* Appointment success Lottie */
 .tr-appoinment-form-wrap {
   position: relative;

@@ -5,13 +5,17 @@ import FAQ from "@/components/FAQ/FAQ";
 import Gallery from "@/components/Gallery/Gallery";
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
 import HowItWorks from "@/components/HowItWorks/HowItWorks";
+import JsonLd from "@/components/Seo/JsonLd";
 import SectionWave from "@/components/SectionWave/SectionWave";
+import SeoLocalSummary from "@/components/Seo/SeoLocalSummary";
 import ServicesGrid from "@/components/ServicesGrid/ServicesGrid";
 import Testimonial from "@/components/Testimonial/Testimonial";
+import { buildServicesItemListJsonLd } from "@/lib/jsonLd";
 
 export default function Home() {
   return (
     <main id="main" className="tr-site">
+      <JsonLd data={buildServicesItemListJsonLd()} />
       <HeroBanner />
       <SectionWave from="#fff5fb" to="#ffffff" />
       <About />
@@ -28,6 +32,7 @@ export default function Home() {
       <SectionWave from="#fff5fb" to="#ffffff" />
       <ClinicLocation />
       <SectionWave from="#ffffff" to="#fff5fb" />
+      <SeoLocalSummary />
       <Appoinment />
     </main>
   );

@@ -5,7 +5,12 @@ import "@icon/icofont/icofont.css";
 import "./globals.css";
 import "./tr-theme.css";
 import { doctor } from "@/lib/doctor";
-import { buildFaqJsonLd, buildPhysicianJsonLd, buildWebSiteJsonLd } from "@/lib/jsonLd";
+import {
+  buildFaqJsonLd,
+  buildMedicalClinicJsonLd,
+  buildPhysicianJsonLd,
+  buildWebSiteJsonLd,
+} from "@/lib/jsonLd";
 import { SITE_URL, siteMetadata } from "@/lib/site";
 
 const poppins = Poppins({
@@ -38,6 +43,7 @@ export const metadata = {
   keywords: siteMetadata.keywords,
   authors: [{ name: doctor.name }],
   creator: doctor.name,
+  category: "healthcare",
   alternates: {
     canonical: "/",
   },
@@ -73,6 +79,10 @@ export const metadata = {
     description: siteMetadata.description,
     images: [ogImage],
   },
+  other: {
+    "geo.region": "IN-HR",
+    "geo.placename": "Gurugram",
+  },
 };
 
 export const viewport = {
@@ -84,15 +94,23 @@ export const viewport = {
 export default function RootLayout({ children }) {
   const physicianLd = buildPhysicianJsonLd(doctor);
   const websiteLd = buildWebSiteJsonLd(doctor);
+  const clinicLd = buildMedicalClinicJsonLd(doctor);
   const faqLd = buildFaqJsonLd(doctor);
-  const jsonLd = faqLd ? [websiteLd, physicianLd, faqLd] : [websiteLd, physicianLd];
+  const jsonLd = faqLd
+    ? [websiteLd, clinicLd, physicianLd, faqLd]
+    : [websiteLd, clinicLd, physicianLd];
 
   return (
     <html lang="en-IN">
       <head>
-        <link rel="canonical" href={SITE_URL} />
         <meta name="geo.region" content="IN-HR" />
         <meta name="geo.placename" content="Gurugram" />
+        {doctor.googleSiteVerification ? (
+          <meta
+            name="google-site-verification"
+            content={doctor.googleSiteVerification}
+          />
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
