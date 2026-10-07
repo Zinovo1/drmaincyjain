@@ -13,21 +13,21 @@ export default function Home() {
   return (
     <main id="main" className="tr-site">
       <HeroBanner />
-      <SectionWave from="#faf7f4" to="#ffffff" />
+      <SectionWave from="#f8f5ff" to="#ffffff" />
       <About />
-      <SectionWave from="#ffffff" to="#faf7f4" />
+      <SectionWave from="#ffffff" to="#f8f5ff" />
       <ServicesGrid />
-      <SectionWave from="#faf7f4" to="#ffffff" />
+      <SectionWave from="#f8f5ff" to="#ffffff" />
       <HowItWorks />
-      <SectionWave from="#ffffff" to="#faf7f4" />
+      <SectionWave from="#ffffff" to="#f8f5ff" />
       <Gallery />
-      <SectionWave from="#faf7f4" to="#ffffff" />
+      <SectionWave from="#f8f5ff" to="#ffffff" />
       <Testimonial />
-      <SectionWave from="#ffffff" to="#faf7f4" />
+      <SectionWave from="#ffffff" to="#f8f5ff" />
       <FAQ />
-      <SectionWave from="#faf7f4" to="#ffffff" />
+      <SectionWave from="#f8f5ff" to="#ffffff" />
       <ClinicLocation />
-      <SectionWave from="#ffffff" to="#faf7f4" />
+      <SectionWave from="#ffffff" to="#f8f5ff" />
       <Appoinment />
     </main>
   );
