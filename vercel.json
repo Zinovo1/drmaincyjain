@@ -3,6 +3,14 @@
   "outputDirectory": "out",
   "framework": null,
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.drmaincyjain.com" }],
+      "destination": "https://drmaincyjain.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|svg|ico|woff2|css|js)",
