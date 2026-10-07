@@ -3,10 +3,10 @@
 import { useEffect, useRef } from "react";
 
 const COLORS = [
-  [124, 58, 237],
-  [167, 139, 250],
-  [221, 214, 254],
-  [245, 243, 255],
+  [244, 114, 182],
+  [192, 132, 252],
+  [249, 168, 212],
+  [253, 242, 248],
 ];
 
 function particleCount(width, height) {

@@ -16,9 +16,12 @@ const HeroBanner = () => {
           <div className="col-lg-6">
             <p className="tr-hero-eyebrow">{banner?.eyebrow}</p>
             <h1 className="tr-hero-title">
+              {doctor.seoHeadline || "Best Gynecologist in Gurugram"}
+            </h1>
+            <p className="tr-hero-title-accent">
               {doctor.heroTagline || banner?.title}
               <HeroStarSparkle />
-            </h1>
+            </p>
             <p className="tr-hero-lead">{doctor.heroLead || banner?.intro}</p>
             <div className="tr-hero-actions">
               <a href="#appoinment" className="tr-btn tr-btn-primary">
