@@ -1,4 +1,3 @@
-import { Cormorant_Garamond, Poppins } from "next/font/google";
 import dynamic from "next/dynamic";
 import "bootstrap/dist/css/bootstrap.css";
 import "@icon/icofont/icofont.css";
@@ -12,19 +11,6 @@ import {
   buildWebSiteJsonLd,
 } from "@/lib/jsonLd";
 import { SITE_URL, siteMetadata } from "@/lib/site";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-poppins",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-display",
-});
 
 const Header = dynamic(() => import("@/components/Header/Header"));
 const Footer = dynamic(() => import("@/components/Footer/Footer"));
@@ -44,6 +30,11 @@ export const metadata = {
   authors: [{ name: doctor.name }],
   creator: doctor.name,
   category: "healthcare",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   alternates: {
     canonical: "/",
   },
@@ -103,6 +94,25 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              :root {
+                --font-poppins: 'Poppins', sans-serif;
+                --font-display: 'Cormorant Garamond', serif;
+              }
+              body.tr-body {
+                font-family: var(--font-poppins);
+              }
+            `,
+          }}
+        />
         <meta name="geo.region" content="IN-HR" />
         <meta name="geo.placename" content="Gurugram" />
         {doctor.googleSiteVerification ? (
@@ -116,7 +126,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`tr-body ${poppins.className} ${cormorant.variable} has-sticky-cta`}>
+      <body className="tr-body has-sticky-cta">
         <AmbientParticles />
         <Header />
         <div>{children}</div>
